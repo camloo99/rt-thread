@@ -1,9 +1,8 @@
+/* add user code begin Header */
 /**
   **************************************************************************
-  * @file     at32f415_conf.h
-  * @version  v2.0.4
-  * @date     2022-04-02
-  * @brief    at32f415 config header file
+  * @file     at32l021_conf.h
+  * @brief    at32l021 config header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
   *
@@ -23,124 +22,122 @@
   *
   **************************************************************************
   */
+/* add user code end Header */
 
 /* define to prevent recursive inclusion -------------------------------------*/
-#ifndef __AT32F415_CONF_H
-#define __AT32F415_CONF_H
+#ifndef __AT32L021_CONF_H
+#define __AT32L021_CONF_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
-  * @brief in the following line adjust the value of high speed exernal crystal (hext)
+  * @brief in the following line adjust the value of high speed external crystal (hext)
   * used in your application
+  *
   * tip: to avoid modifying this file each time you need to use different hext, you
   *      can define the hext value in your toolchain compiler preprocessor.
+  *
   */
 #if !defined  HEXT_VALUE
-#define HEXT_VALUE               ((uint32_t)8000000) /*!< value of the high speed exernal crystal in hz */
+#define HEXT_VALUE               ((uint32_t)8000000) /*!< value of the high speed external crystal in hz */
 #endif
 
 /**
-  * @brief in the following line adjust the high speed exernal crystal (hext) startup
+  * @brief in the following line adjust the high speed external crystal (hext) startup
   * timeout value
   */
-#define HEXT_STARTUP_TIMEOUT     ((uint16_t)0x3000) /*!< time out for hext start up */
-#define HICK_VALUE               ((uint32_t)8000000) /*!< value of the high speed internal clock in hz */
+#define HEXT_STARTUP_TIMEOUT             ((uint16_t)0x3000)  /*!< time out for hext start up */
+#define HICK_VALUE                       ((uint32_t)8000000) /*!< value of the high speed internal clock in hz */
+#define LEXT_VALUE                       ((uint32_t)32768)   /*!< value of the low speed external clock in hz */
 
 /* module define -------------------------------------------------------------*/
 #define CRM_MODULE_ENABLED
-#define CMP_MODULE_ENABLED
-#define TMR_MODULE_ENABLED
-#define ERTC_MODULE_ENABLED
+/*#define CAN_MODULE_ENABLED----------------------*/
+/*#define TMR_MODULE_ENABLED----------------------*/
+/*#define ERTC_MODULE_ENABLED---------------------*/
 #define GPIO_MODULE_ENABLED
-#define I2C_MODULE_ENABLED
+/*#define I2C_MODULE_ENABLED----------------------*/
 #define USART_MODULE_ENABLED
 #define PWC_MODULE_ENABLED
-#define CAN_MODULE_ENABLED
-#define ADC_MODULE_ENABLED
-#define SPI_MODULE_ENABLED
-#define DMA_MODULE_ENABLED
+/*#define ADC_MODULE_ENABLED----------------------*/
+/*#define SPI_MODULE_ENABLED----------------------*/
+/*#define DMA_MODULE_ENABLED----------------------*/
 #define DEBUG_MODULE_ENABLED
 #define FLASH_MODULE_ENABLED
-#define CRC_MODULE_ENABLED
-#define WWDT_MODULE_ENABLED
-#define WDT_MODULE_ENABLED
-#define EXINT_MODULE_ENABLED
-#define SDIO_MODULE_ENABLED
-#define USB_MODULE_ENABLED
+/*#define CRC_MODULE_ENABLED----------------------*/
+/*#define WWDT_MODULE_ENABLED---------------------*/
+/*#define WDT_MODULE_ENABLED----------------------*/
+/*#define EXINT_MODULE_ENABLED--------------------*/
 #define MISC_MODULE_ENABLED
+/*#define SCFG_MODULE_ENABLED---------------------*/
+/*#define HWDIV_MODULE_ENABLED--------------------*/
 
 /* includes ------------------------------------------------------------------*/
 #ifdef CRM_MODULE_ENABLED
-#include "at32f415_crm.h"
-#endif
-#ifdef CMP_MODULE_ENABLED
-#include "at32f415_cmp.h"
-#endif
-#ifdef TMR_MODULE_ENABLED
-#include "at32f415_tmr.h"
-#endif
-#ifdef ERTC_MODULE_ENABLED
-#include "at32f415_ertc.h"
-#endif
-#ifdef GPIO_MODULE_ENABLED
-#include "at32f415_gpio.h"
-#endif
-#ifdef I2C_MODULE_ENABLED
-#include "at32f415_i2c.h"
-#endif
-#ifdef USART_MODULE_ENABLED
-#include "at32f415_usart.h"
-#endif
-#ifdef PWC_MODULE_ENABLED
-#include "at32f415_pwc.h"
+#include "at32l021_crm.h"
 #endif
 #ifdef CAN_MODULE_ENABLED
-#include "at32f415_can.h"
+#include "at32l021_can.h"
+#endif
+#ifdef TMR_MODULE_ENABLED
+#include "at32l021_tmr.h"
+#endif
+#ifdef ERTC_MODULE_ENABLED
+#include "at32l021_ertc.h"
+#endif
+#ifdef GPIO_MODULE_ENABLED
+#include "at32l021_gpio.h"
+#endif
+#ifdef I2C_MODULE_ENABLED
+#include "at32l021_i2c.h"
+#endif
+#ifdef USART_MODULE_ENABLED
+#include "at32l021_usart.h"
+#endif
+#ifdef PWC_MODULE_ENABLED
+#include "at32l021_pwc.h"
 #endif
 #ifdef ADC_MODULE_ENABLED
-#include "at32f415_adc.h"
+#include "at32l021_adc.h"
 #endif
 #ifdef SPI_MODULE_ENABLED
-#include "at32f415_spi.h"
+#include "at32l021_spi.h"
 #endif
 #ifdef DMA_MODULE_ENABLED
-#include "at32f415_dma.h"
+#include "at32l021_dma.h"
 #endif
 #ifdef DEBUG_MODULE_ENABLED
-#include "at32f415_debug.h"
+#include "at32l021_debug.h"
 #endif
 #ifdef FLASH_MODULE_ENABLED
-#include "at32f415_flash.h"
+#include "at32l021_flash.h"
 #endif
 #ifdef CRC_MODULE_ENABLED
-#include "at32f415_crc.h"
+#include "at32l021_crc.h"
 #endif
 #ifdef WWDT_MODULE_ENABLED
-#include "at32f415_wwdt.h"
+#include "at32l021_wwdt.h"
 #endif
 #ifdef WDT_MODULE_ENABLED
-#include "at32f415_wdt.h"
+#include "at32l021_wdt.h"
 #endif
 #ifdef EXINT_MODULE_ENABLED
-#include "at32f415_exint.h"
-#endif
-#ifdef SDIO_MODULE_ENABLED
-#include "at32f415_sdio.h"
+#include "at32l021_exint.h"
 #endif
 #ifdef MISC_MODULE_ENABLED
-#include "at32f415_misc.h"
+#include "at32l021_misc.h"
 #endif
-#ifdef USB_MODULE_ENABLED
-#include "at32f415_usb.h"
+#ifdef SCFG_MODULE_ENABLED
+#include "at32l021_scfg.h"
+#endif
+#ifdef HWDIV_MODULE_ENABLED
+#include "at32l021_hwdiv.h"
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __AT32F415_CONF_H */
-
-
+#endif
