@@ -12,7 +12,7 @@
 #define __BOARD_H__
 
 #include <rtthread.h>
-#include "at32f415.h"
+#include "at32l021.h"
 #include "at32_msp.h"
 #include "drv_common.h"
 #include "drv_gpio.h"

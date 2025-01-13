@@ -115,7 +115,10 @@ rt_weak void rt_hw_board_init()
     system_clock_config();
 
     /* configure nvic priority group */
-    nvic_priority_group_config(NVIC_PRIORITY_GROUP_4);
+    NVIC_SetPriority(SVCall_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
+    NVIC_SetPriority(PendSV_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
+    NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 3, 0));
+    nvic_irq_enable(USART1_IRQn, 0, 0);
 
     /* systick init */
     rt_hw_systick_init();

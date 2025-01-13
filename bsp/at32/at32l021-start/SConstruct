@@ -46,7 +46,7 @@ Export('SDK_LIB')
 # prepare building environment
 objs = PrepareBuilding(env, RTT_ROOT, has_libcpu=False)
 
-at32_library = 'AT32F415_Firmware_Library'
+at32_library = 'AT32L021_Firmware_Library'
 rtconfig.BSP_LIBRARY_TYPE = at32_library
 
 # include libraries

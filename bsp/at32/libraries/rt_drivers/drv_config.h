@@ -95,6 +95,8 @@ extern "C" {
 #include "m412_416/i2c_config.h"
 #include "m412_416/spi_config.h"
 #include "m412_416/dac_config.h"
+#elif defined(SOC_SERIES_AT32L021)
+#include "l021/uart_config.h"
 #endif
 
 #ifdef __cplusplus

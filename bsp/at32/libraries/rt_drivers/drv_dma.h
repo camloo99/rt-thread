@@ -35,7 +35,7 @@ struct dma_config {
     dma_channel_type *dma_channel;
     crm_periph_clock_type dma_clock;
     IRQn_Type dma_irqn;
-#if defined (SOC_SERIES_AT32F425)
+#if defined (SOC_SERIES_AT32F425) || defined (SOC_SERIES_AT32L021)
     rt_uint8_t flex_channel;
     rt_uint32_t request_id;
 #endif

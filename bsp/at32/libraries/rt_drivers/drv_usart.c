@@ -331,7 +331,7 @@ static void at32_dma_config(struct rt_serial_device *serial, rt_ubase_t flag)
 
     dma_reset(dma_channel);
     dma_init(dma_channel, &dma_init_struct);
-#if defined (SOC_SERIES_AT32F425)
+#if defined (SOC_SERIES_AT32F425) || defined (SOC_SERIES_AT32L021)
     dma_flexible_config(dma_config->dma_x, dma_config->flex_channel, \
                        (dma_flexible_request_type)dma_config->request_id);
 #endif

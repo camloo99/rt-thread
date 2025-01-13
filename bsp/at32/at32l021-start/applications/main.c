@@ -13,12 +13,12 @@
 #include "drv_common.h"
 #include "drv_gpio.h"
 
-/* defined the led2 pin: pc2 */
-#define LED2_PIN    GET_PIN(C, 2)
-/* defined the led3 pin: pc3 */
-#define LED3_PIN    GET_PIN(C, 3)
-/* defined the led4 pin: pc5 */
-#define LED4_PIN    GET_PIN(C, 5)
+/* defined the led2 pin: pf6 */
+#define LED2_PIN    GET_PIN(F, 6)
+/* defined the led3 pin: pf7 */
+#define LED3_PIN    GET_PIN(F, 7)
+/* defined the led4 pin: pb11 */
+#define LED4_PIN    GET_PIN(B, 11)
 
 int main(void)
 {

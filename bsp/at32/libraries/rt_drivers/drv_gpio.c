@@ -26,7 +26,8 @@
     defined (SOC_SERIES_AT32F421) || defined (SOC_SERIES_AT32F425) || \
     defined (SOC_SERIES_AT32F423) || defined (SOC_SERIES_AT32F402) || \
     defined (SOC_SERIES_AT32F405) || defined (SOC_SERIES_AT32A423) || \
-    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416)
+    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416) || \
+	defined (SOC_SERIES_AT32L021)
 #define PIN_ATPORTSOURCE(pin)           (scfg_port_source_type)((uint8_t)(((pin) & 0xF0u) >> 4))
 #define PIN_ATPINSOURCE(pin)            (scfg_pins_source_type)((uint8_t)((pin) & 0xFu))
 #else
@@ -68,7 +69,8 @@
 
 #define PIN_ATPORT_MAX __AT32_PORT_MAX
 
-#if defined (SOC_SERIES_AT32F421) || defined (SOC_SERIES_AT32F425)
+#if defined (SOC_SERIES_AT32F421) || defined (SOC_SERIES_AT32F425) || \
+    defined (SOC_SERIES_AT32L021)
 static const struct pin_irq_map pin_irq_map[] =
 {
     {GPIO_PINS_0,  EXINT_LINE_0,  EXINT1_0_IRQn},
@@ -438,7 +440,8 @@ static rt_err_t at32_pin_irq_enable(struct rt_device *device, rt_base_t pin,
     defined (SOC_SERIES_AT32F421) || defined (SOC_SERIES_AT32F425) || \
     defined (SOC_SERIES_AT32F423) || defined (SOC_SERIES_AT32F402) || \
     defined (SOC_SERIES_AT32F405) || defined (SOC_SERIES_AT32A423) || \
-    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416)
+    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416) || \
+	defined (SOC_SERIES_AT32L021)
         scfg_exint_line_config(PIN_ATPORTSOURCE(pin), PIN_ATPINSOURCE(pin));
 #else
         gpio_exint_line_config(PIN_ATPORTSOURCE(pin), PIN_ATPINSOURCE(pin));
@@ -724,7 +727,8 @@ int rt_hw_pin_init(void)
     defined (SOC_SERIES_AT32F421) || defined (SOC_SERIES_AT32F425) || \
     defined (SOC_SERIES_AT32F423) || defined (SOC_SERIES_AT32F402) || \
     defined (SOC_SERIES_AT32F405) || defined (SOC_SERIES_AT32A423) || \
-    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416)
+    defined (SOC_SERIES_AT32M412) || defined (SOC_SERIES_AT32M416) || \
+	defined (SOC_SERIES_AT32L021)
     crm_periph_clock_enable(CRM_SCFG_PERIPH_CLOCK, TRUE);
 #else
     crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
